@@ -1,0 +1,66 @@
+<!-- resources/views/partials/footer.antlers.html -->
+<footer class="bg-gray-900 text-white py-10 min-w-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- About -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">About</h3>
+                <p class="text-sm text-gray-300">
+                    This is a personal blog about tech, design, and web
+                    development. Powered by Statamic.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    {{ nav:main_nav }}
+                    <li>
+                        <a href="{{url}}" class="hover:underline">{{title}}</a>
+                    </li>
+                    {{ /nav:main_nav }}
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Follow Me</h3>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-blue-400">Twitter</a></li>
+                    <li>
+                        <a href="#" class="hover:text-pink-400">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-blue-600">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Newsletter</h3>
+                <form action="#" method="POST" class="flex flex-col space-y-2">
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                        class="px-3 py-2 rounded text-gray-900 focus:outline-none"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded"
+                    >
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400"
+        >
+            &copy; {{ now format="Y" }} MyBlog. All rights reserved.
+        </div>
+    </div>
+</footer>

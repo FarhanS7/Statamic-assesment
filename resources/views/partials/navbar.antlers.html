@@ -1,0 +1,79 @@
+<!-- resources/views/partials/navbar.antlers.html -->
+<nav class="bg-gray-900 text-white min-w-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold text-white-800"
+                        >MyBlog</a
+                    >
+                </div>
+                <!-- Menu -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    {{ nav:main_nav }}
+                    <a
+                        href="{{url}}"
+                        class="inline-flex items-center px-1 pt-1 text-sm font-medium text-white-700 hover:text-blue-600"
+                        >{{title}}</a
+                    >
+
+                    {{ /nav:main_nav }}
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button
+                    x-data="{ open: false }"
+                    x-on:click="open = !open"
+                    type="button"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-white-700 hover:text-white hover:bg-white-700 focus:outline-none"
+                    aria-expanded="false"
+                >
+                    <svg
+                        class="h-6 w-6"
+                        x-show="!open"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                    <svg
+                        class="h-6 w-6"
+                        x-show="open"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="sm:hidden" x-data="{ open: false }" x-show="open" x-transition>
+        <div class="pt-2 pb-3 space-y-1">
+            {{ nav:main_nav }}
+            <a
+                href="{{url}}"
+                class="block pl-3 pr-4 py-2 text-base font-medium text-white-700 hover:bg-white-100"
+                >{{title}}</a
+            >
+            {{ /nav:main_nav }}
+        </div>
+    </div>
+</nav>
